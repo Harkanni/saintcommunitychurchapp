@@ -5,6 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from './screens';
+import Events from './screens/Events';
+import BottombarNavigation from './components/BottombarNavigation';
 
 
 
@@ -38,6 +40,16 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name='Event'
+          component={Events}
+          options={{ headerShown: false }}
+        />
+        {/* <Stack.Screen
+          name='Bottombar'
+          component={BottombarNavigation}
+          options={{ headerShown: false }}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
