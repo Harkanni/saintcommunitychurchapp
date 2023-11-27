@@ -4,6 +4,8 @@ import style from './upcomingEvent.style';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { COLORS, SIZES } from '../constants';
 import { FlatList } from 'react-native';
+import { UpcomingEvents as UpcomingEventsData } from '../constants/EventsData';
+import EventRow from '../components/EventRow';
 
 const UpcomingEvents = () => {
   return (
@@ -13,7 +15,11 @@ const UpcomingEvents = () => {
         style={style.imageBackground}
         resizeMode='cover'
       >
-        {/* <FlatList /> */}
+        <FlatList
+         data={UpcomingEventsData}
+         keyExtractor={(item, index) => index}
+         renderItem={({ item }) => (<EventRow item={item} />)}
+        />
       </ImageBackground>
     </View>
   );

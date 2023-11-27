@@ -1,12 +1,14 @@
 import { View, Text, SafeAreaView, ScrollView } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import style from './event.style';
 import { ImageBackground } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
-import BottombarNavigation from '../components/BottombarNavigation';
+import UpcomingEvents from './UpcomingEvents';
+import PastEvents from './PastEvents';
 
 const Events = () => {
+  const [activeTab, setActiveTab] = useState('upcoming');
   return (
     <SafeAreaView style={style.container}>
       <ImageBackground
@@ -28,7 +30,37 @@ const Events = () => {
           </View>
         </View>
 
-        <BottombarNavigation />
+        <View style={style.appNavigationWrapper}>
+          <View style={style.appNavigation}>
+            <TouchableOpacity
+              onPress={() => {
+                setActiveTab('upcoming');
+              }}
+            >
+              <Text
+                style={[
+                  style.navText,
+                  activeTab == 'upcoming' ? style.bgRed : style.bgNone
+                ]}
+              >
+                Upcoming
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => setActiveTab('past')}>
+              <Text
+                style={[
+                  style.navText,
+                  activeTab == 'past' ? style.bgRed : style.bgNone
+                ]}
+              >
+                Past
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {activeTab == 'upcoming' ? <UpcomingEvents /> : <PastEvents />}
       </ImageBackground>
     </SafeAreaView>
   );

@@ -1,22 +1,24 @@
-import { View, Text } from 'react-native';
+import { View, Text, } from 'react-native';
 import React from 'react';
-import style from './upcomingEventRow.style.js';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { COLORS, SIZES } from '../constants';
+import style from './EventRow.style.js';
 
-const UpcomingEventRow = () => {
+const EventRow = ({ item }) => {
   return (
     <View style={style.eventWrapper}>
       <View style={style.eventHeader}>
         <View style={style.eventDate}>
-          <FontAwesome5 name='calendar-day' size={20} color='black' />
-          <Text>05th May</Text>
+          <FontAwesome5 name='calendar-day' size={16} color='black' />
+          <Text>{item.date}</Text>
         </View>
         <View style={style.eventClock}>
-          <FontAwesome5 name='calendar-day' size={20} color='black' />
-          <Text>12:30pm</Text>
+          <FontAwesome5 name='clock' size={16} color='black' />
+          <Text>{item.time}</Text>
         </View>
         <View style={style.eventAge}>
-          <FontAwesome5 name='calendar-day' size={20} color='black' />
-          <Text> All</Text>
+          <FontAwesome5 name='calendar-day' size={16} color='black' />
+          <Text>{item.age}</Text>
         </View>
       </View>
 
@@ -31,7 +33,7 @@ const UpcomingEventRow = () => {
             paddingVertical: SIZES.xSmall
           }}
         >
-          Bookstore Spring Open House
+          {item.event_title}
         </Text>
         <Text
           style={{
@@ -41,14 +43,11 @@ const UpcomingEventRow = () => {
             letterSpacing: -0.1
           }}
         >
-          Join us for the Sportman's Dinner feasr at Carnegie Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Aut commodi voluptatibus
-          fugit.olor sit amet consectetur, adipisicing elit. Aut commodi
-          voluptatibus fugit.
+         {item.event_description.trim()}
         </Text>
       </View>
     </View>
   );
 };
 
-export default UpcomingEventRow;
+export default EventRow;

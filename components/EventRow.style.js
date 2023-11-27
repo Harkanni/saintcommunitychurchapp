@@ -19,16 +19,19 @@ const style = StyleSheet.create({
    },
    eventDate: {
       flexDirection: 'row',
-      gap: 10
+      gap: 10,
+      alignItems: 'center',
    },
    eventClock: {
       flexDirection: 'row',
       gap: 10,
+      alignItems: 'center',
    },
    eventAge: {
       flexDirection: 'row',
       justifyContent: 'flex-start',
       gap: 10,
+      alignItems: 'center',
    },
    eventContainer: {
       padding: SIZES.large,
