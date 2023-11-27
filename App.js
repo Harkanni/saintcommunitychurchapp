@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from './screens';
 import Events from './screens/Events';
 import BottombarNavigation from './components/BottombarNavigation';
+import Blog from './screens/Blog';
 
 
 
@@ -45,11 +46,11 @@ export default function App() {
           component={Events}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen
-          name='Bottombar'
-          component={BottombarNavigation}
+        <Stack.Screen
+          name='Blog'
+          component={Blog}
           options={{ headerShown: false }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

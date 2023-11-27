@@ -27,7 +27,7 @@ const NavTab = () => {
         {/* END OF EVENTS */}
 
         {/* BLOGS */}
-        <TouchableOpacity style={style.navTabContainer}>
+        <TouchableOpacity style={style.navTabContainer} onPress={() => navigation.navigate('Blog')}>
           <View style={style.navTab}>
             <MaterialIcons name='my-library-books' size={24} color='black' />
             <View style={{ marginTop: -3 }}>
