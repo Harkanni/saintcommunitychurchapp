@@ -8,7 +8,8 @@ const style = StyleSheet.create({
     borderRadius: SIZES.xSmall - 5,
     padding: SIZES.xSmall - 5,
     flexDirection: 'row',
-    maxHeight: 150
+    maxHeight: 150,
+    marginBottom: SIZES.small
   },
   blogImageContainer: {
     width: '40%',
