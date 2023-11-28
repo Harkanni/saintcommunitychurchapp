@@ -2,14 +2,15 @@ import { View, Text, SafeAreaView, FlatList, Image } from 'react-native';
 import React from 'react';
 import style from './home.style';
 import { ImageBackground } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
-import { Navigation } from '../constants/navigation';
-import { SIZES } from '../constants';
 import NavTab from '../components/NavTab';
 import { ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+   const navigation = useNavigation()
   return (
     <SafeAreaView style={style.container}>
       <ImageBackground
@@ -46,6 +47,24 @@ const Home = () => {
 
           <NavTab />
         </ScrollView>
+
+        <View style={style.bottomNavigationWrapper}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+               <View style={style.bottomNavIconContainer}>
+                  <FontAwesome5 name='home' size={20} color='white' />
+               </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Event')}>
+               <View style={style.bottomNavIconContainer}>
+                  <FontAwesome5 name='calendar-day' size={20} color='white' />
+               </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Blog')}>
+               <View style={style.bottomNavIconContainer}>
+                  <MaterialIcons name='message' size={24} color='white' />
+               </View>
+            </TouchableOpacity>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );

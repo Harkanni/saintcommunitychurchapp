@@ -6,8 +6,10 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import UpcomingEvents from './UpcomingEvents';
 import PastEvents from './PastEvents';
+import { useNavigation } from '@react-navigation/native';
 
 const Events = () => {
+  const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState('upcoming');
   return (
     <SafeAreaView style={style.container}>
@@ -19,7 +21,7 @@ const Events = () => {
         <View style={style.appBarWrapper}>
           <View style={style.appBar}>
             <View style={style.menuWrapper}>
-              <TouchableOpacity onPress={() => {}}>
+              <TouchableOpacity onPress={() => navigation.openDrawer()}>
                 <FontAwesome5 name='bars' size={24} color='white' />
               </TouchableOpacity>
               <Text style={style.title}>Events</Text>

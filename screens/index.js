@@ -1,4 +1,5 @@
-import Home from "./Home";
+import Home from './Home';
+import Events from './Events';
+import Blog from './Blog';
 
-
-export { Home }
+export { Home, Events, Blog };

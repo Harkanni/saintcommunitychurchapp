@@ -3,20 +3,20 @@ import { SIZES, COLORS } from '../constants';
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   imageBackground: {
     flex: 1,
     opacity: 1.2,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   },
   appBarWrapper: {
     paddingHorizontal: SIZES.large,
     paddingTop: SIZES.xxLarge,
-    backgroundColor: 'red',
+    backgroundColor: 'red'
   },
   appBar: {
-   //  position: 'absolute',
+    //  position: 'absolute',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -75,6 +75,27 @@ const style = StyleSheet.create({
   tabDescription: {
     fontSize: SIZES.xSmall,
     marginTop: -SIZES.xSmall + 3
+  },
+  bottomNavigationWrapper: {
+    backgroundColor: 'white',
+    padding: 10,
+    marginTop: SIZES.large +20,
+    marginBottom: SIZES.large +10,
+    borderRadius: SIZES.small,
+    marginHorizontal: SIZES.small,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    shadowOpacity: 1,
+    shadowOffset: 30,
+    shadowColor: 'red'
+  },
+  bottomNavIconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    height: 45,
+    width: 45,
+    borderRadius: 50
   }
 });
 
