@@ -15,6 +15,7 @@ import Events from '../screens/Events';
 import HomeStackNavigator from './StackNavigator';
 import { SafeAreaView } from 'react-native';
 import { Image } from 'react-native';
+import Prayer from '../screens/Prayer';
 
 const Drawer = createDrawerNavigator();
 const DrawerNavigation = () => {
@@ -112,7 +113,7 @@ const DrawerNavigation = () => {
             <FontAwesome5 name='book-reader' size={24} color='black' />
           )
         }}
-        component={Blog}
+        component={Prayer}
       />
       {/* END OF Prayers SCREEN */}
 

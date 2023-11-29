@@ -41,7 +41,7 @@ const NavTab = () => {
         {/* END OF BLOGS */}
 
         {/* Prayers */}
-        <TouchableOpacity style={style.navTabContainer}>
+        <TouchableOpacity style={style.navTabContainer} onPress={() => navigation.navigate('Prayer')}>
           <View style={style.navTab}>
             <FontAwesome5 name='book-reader' size={24} color='black' />
             <View style={{ marginTop: -3 }}>
